@@ -26,7 +26,7 @@ Codename:	Core
 
 ![](https://github.com/lovewinxp/jprobes_hook/blob/master/jpg/3.png)
 
-接着把正确的地址硬编码到代码里来确认是否还是存在问题，结果使用硬编码的方法依旧会导致存在死机。后来想到hook其他函数是否也会存在问题？尝试hook sys_open发现可以hook成功，看来是sys_execve的问题，最后定位到应该是汇编代码里的堆栈平衡在这个版本下有点问题，但不熟汇编所以只能查查是否有其他版本解决。
+接着把正确的地址硬编码到代码里来确认是否还是存在问题，结果使用硬编码的方法依旧会导致存在死机。后来想到hook其他函数是否也会存在问题？尝试hook sys_open发现可以hook成功，看来是sys_execve的问题，最后定位到应该是汇编代码里的堆栈平衡在这个版本下有点问题，但不熟汇编所以只能查查是否有其他方法解决。
 
 ## jprobe结构体：
 查找资料后发现jprobe也可以hook，先看下jprobe的结构。
