@@ -12,16 +12,9 @@
 #include <linux/version.h>
 #include <net/sock.h>
 #include <net/netlink.h>
-
-
-#include <linux/init.h>
 #include <linux/kprobes.h>
-#include <linux/fs.h>
-#include <asm/uaccess.h>
 #include <asm/ptrace.h>
-#include <linux/skbuff.h>
-#include <linux/sched.h>
-#include <linux/kthread.h>
+
 
 
 static struct jprobe jp;
